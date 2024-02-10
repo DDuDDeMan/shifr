@@ -1,0 +1,24 @@
+import random
+
+class shifr:
+    def __init__(self,n,m):
+        self._hidden_number = n
+        self._operation = m
+
+    def operation(self, number):
+        operations = ['+', '-', '*', '/']
+        if self._operation == '+':
+            return number + random.randint(1, 10)
+        elif self._operation == '-':
+            return number - random.randint(1, 10)
+        elif self._operation == '*':
+            return number * random.randint(1, 10)
+        elif self._operation == '/':
+            return number / random.randint(1, 10)
+
+n = int(input("Enter a number: "))
+m = input("Enter the operation (+, -, *, /): ")
+
+cipher = shifr(n, m)
+
+print(cipher.operation(n))
